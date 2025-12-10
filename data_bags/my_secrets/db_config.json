@@ -1,0 +1,17 @@
+{
+  "id": "db_config",
+  "password": {
+    "encrypted_data": "hWEt5oyHRbCCQlLBgLjSSiH4gzDK3mQ=\n",
+    "iv": "hW7xYITlEM54tjR9\n",
+    "auth_tag": "ZKkxEMmKeABGcyh2lFuDcg==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  },
+  "username": {
+    "encrypted_data": "hiA+Z/27Tn3rWdgDw+5R4N2QgFnrKSs+4Q==\n",
+    "iv": "EmktiLK1/flffwQR\n",
+    "auth_tag": "I1gno7QP9KLTqyQUbgR9CA==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  }
+}

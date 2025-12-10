@@ -1,0 +1,35 @@
+---
+driver:
+  name: dokken
+  privileged: true
+  chef_version: latest
+  # ADD THIS BLOCK:
+  ports:
+    - "8080:80"  # Map Kali's 8080 to Container's 80
+
+  volumes:
+    - /root/.chef/encrypted_data_bag_secret:/etc/chef/encrypted_data_bag_secret
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+  deprecations_as_errors: true
+  # 2. TELL KITCHEN WHERE YOUR DATA BAGS ARE
+  data_bags_path: ../../data_bags
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-20.04
+    driver:
+      image: dokken/ubuntu-20.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[my_webserver::default]
+    attributes:
+      my_webserver:
+        homepage_message: "Hello from Test Kitchen Container!"
